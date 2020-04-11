@@ -1,13 +1,48 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* @font-face {
+    font-family: 'Impact';
+    src: url('./fonts/impact.ttf');
+    font-weight: normal;
+    font-style: normal;
+  } */
+
+.container {
+    min-height: 100vh;
+    position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header, .footer {
+    background-color: mediumpurple;
+    text-align: left;
+    padding: 20px;
+    color: white;
+}
+
+
+.article {
+    padding: 20px;
+}
+
+.memeContainer {
+    position: relative;
+    width: 50%;
+    padding-top: 40px;
+}
+
+.memeImage {
+    width: 100%;
+}
+
+.memeInsertion {
+    font-family: Impact;
+    text-transform: uppercase;
+    font-size: large;
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 5px black,0 0 5px black, 0 0 10px black;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
 }
