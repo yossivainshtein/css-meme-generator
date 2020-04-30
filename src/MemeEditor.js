@@ -6,16 +6,20 @@ export default class MemeEditor extends React.Component {
   constructor(props) {
     super(props)
     this.onCssChangeHandler = this.onCssChangeHandler.bind(this)
-    console.log('z',this.state)
     this.state = Object.assign({}, {template: props.template})
   }
 
   onCssChangeHandler(index, css_change) {
-    console.log('nnn', index, css_change)
     const style = Object.assign({}, this.state.template.tags[index].style)
     delete style[css_change.old_value.key]
     style[css_change.new_value.key]  = css_change.new_value.value
     this.state.template.tags[index].style = style
+
+    this.setState({ 'template': this.state.template })
+  }
+
+  onTextChangeHandler(index, new_text) {
+    this.state.template.tags[index].text = new_text
     this.setState({ 'template': this.state.template })
   }
 
@@ -31,7 +35,8 @@ export default class MemeEditor extends React.Component {
           { this.state.template.tags.map((tag, i) => 
             <MemeInsertionEditor  index={i} 
                                   tag={tag} 
-                                  onCssChangedHandler={(e) => this.onCssChangeHandler(i, e)}/>) }
+                                  onCssChangedHandler={(e) => this.onCssChangeHandler(i, e)}
+                                  onTextChangedHandler={ (e) => this.onTextChangeHandler(i, e.target.value)}/>) }
         </div>
       </div>
     );
