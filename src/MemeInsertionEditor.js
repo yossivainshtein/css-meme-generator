@@ -7,7 +7,7 @@ export default class MemeInsertionEditor extends React.Component {
         return (  
         <div>
             <InputWithLabel label={ "Text #" + (this.props.index+1) } value={ this.props.tag.text }/>
-            <CssEditor style={ this.props.tag.style }/>
+            <CssEditor style={ this.props.tag.style } onCssChangedHandler={ this.props.onCssChangedHandler }/>
         </div>
     )}
 }

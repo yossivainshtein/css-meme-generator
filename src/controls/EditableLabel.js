@@ -17,8 +17,8 @@ function selectText(node) {
 }
 
 export default class EditableLabel extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             editing: false,
         }
@@ -36,25 +36,44 @@ export default class EditableLabel extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({value: event.target.value});
+        console.log('handleChange')
+        this.props.onValueChanged && this.props.onValueChanged({
+            old_value: this.props.value, 
+            new_value: event.target.innerText
+        })
     }
 
     finishEdit(event) {
         const node = event.target
-
-        node.classList.toggle('edit')
-
-        this.props.onValueChanged && this.props.onValueChanged({
-            old_value: this.props.value, 
-            new_value: this.state.value
-        })
+        node.classList.toggle('edit')        
     }
 
     keyDownHandler(event) {
         const key = event.key
-        if (key === "Enter" || key === "Escape" ) {
-            this.finishEdit()
+        console.log('keydoen')
+        switch(key) {
+            case "Escape":
+                this.setState({'value': this.props.value})
+            case "Enter":
+                this.finishEdit()
+                this.handleChange(event)
+                break;
+            case "ArrowUp":
+            case "ArrowDown":
+                const value = event.target.innerText
+                const match = /(\d+)(\%)/g.exec(value)
+                if (match) {
+                    let [_, num, units] = match
+                    let diff = key === 'ArrowUp' ? +1 : -1
+                    num = parseInt(num)
+                    num += diff
+                    event.target.innerText = '' + num + units
+                }
+                // event.preventDefault()
+                // event.stopPropagation()
+                this.handleChange(event)
         }
+        
     }
 
     render() {
@@ -62,7 +81,10 @@ export default class EditableLabel extends React.Component {
                   contentEditable 
                   className="cssLabel" 
                   onFocus={ this.startEdit }
-                  onBlur={ this.finishEdit }> 
+                  onBlur={ this.finishEdit }
+                  onInput= { this.handleChange } 
+                  onKeyDown = { this.keyDownHandler }
+                  > 
                     { this.state.value || this.props.value} 
                 </span>)
             
