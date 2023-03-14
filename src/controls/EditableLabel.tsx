@@ -6,22 +6,12 @@ interface EditableLabelProps {
 }
 export default class EditableLabel extends React.Component<EditableLabelProps> {
     private spanRef = React.createRef<HTMLInputElement>()
-    private valueAtStartOfEditing = React.createRef<string>()
-
-    constructor(props: EditableLabelProps) {
-        super(props)
-
-        this.startEdit = this.startEdit.bind(this)
-        this.finishEdit = this.finishEdit.bind(this)
-        this.handleChange = this.handleChange.bind(this);
-        this.keyDownHandler = this.keyDownHandler.bind(this);
-
-    }
+    private valueAtStartOfEditing: string | null = null
 
     startEdit() {
         this.spanRef?.current?.classList.toggle('edit')
         this.spanRef?.current?.select()
-        // this.valueAtStartOfEditing.current = this.props.value
+        this.valueAtStartOfEditing = this.props.value
     }
 
     handleChange() {
@@ -39,7 +29,7 @@ export default class EditableLabel extends React.Component<EditableLabelProps> {
         const key = event.key
         switch(key) {
             case "Escape":
-                // this.valueAtStartOfEditing.current && this.props.onValueChange(this.valueAtStartOfEditing.current)
+                this.valueAtStartOfEditing && this.props.onValueChange(this.valueAtStartOfEditing)
                 this.spanRef?.current?.blur()
                 break;
             case "Enter":
@@ -64,14 +54,14 @@ export default class EditableLabel extends React.Component<EditableLabelProps> {
         return (<input 
                   ref={this.spanRef} 
                   className="cssLabel" 
-                  onFocus={ this.startEdit }
-                  onBlur={ this.finishEdit }
-                  onInput= { this.handleChange } 
+                  onFocus={ () => this.startEdit() }
+                  onBlur={ () => this.finishEdit() }
+                  onInput= { () => this.handleChange() } 
                   value = { this.props.value }
                   style = {{
                     width: `${this.props.value.length}ch`
                   }}
-                  onKeyDown = { this.keyDownHandler }
+                  onKeyDown = { (e) => this.keyDownHandler(e) }
                   onChange = { (e) => this.props.onValueChange(e.target.value)}
                  /> 
                 
