@@ -6,7 +6,7 @@ interface EditableLabelProps {
 }
 export default class EditableLabel extends React.Component<EditableLabelProps> {
     private spanRef = React.createRef<HTMLInputElement>()
-    private valueAtStartOfEditing = React.createRef<string | null>(null)
+    private valueAtStartOfEditing = React.createRef<string>()
 
     constructor(props: EditableLabelProps) {
         super(props)
@@ -21,7 +21,7 @@ export default class EditableLabel extends React.Component<EditableLabelProps> {
     startEdit() {
         this.spanRef?.current?.classList.toggle('edit')
         this.spanRef?.current?.select()
-        this.valueAtStartOfEditing.current = this.props.value
+        // this.valueAtStartOfEditing.current = this.props.value
     }
 
     handleChange() {
@@ -39,7 +39,7 @@ export default class EditableLabel extends React.Component<EditableLabelProps> {
         const key = event.key
         switch(key) {
             case "Escape":
-                this.valueAtStartOfEditing.current && this.props.onValueChange(this.valueAtStartOfEditing.current)
+                // this.valueAtStartOfEditing.current && this.props.onValueChange(this.valueAtStartOfEditing.current)
                 this.spanRef?.current?.blur()
                 break;
             case "Enter":
