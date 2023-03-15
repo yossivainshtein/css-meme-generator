@@ -3,6 +3,7 @@ import React from 'react';
 interface EditableLabelProps {
     value: string
     onValueChange: (value: string) => void
+    onTabPressed?: () => void
 }
 export default class EditableLabel extends React.Component<EditableLabelProps> {
     private spanRef = React.createRef<HTMLInputElement>()
@@ -47,6 +48,10 @@ export default class EditableLabel extends React.Component<EditableLabelProps> {
                     this.props.onValueChange('' + num + units)
                 }
                 event.preventDefault()
+                break;
+            case "Tab":
+                this.props.onTabPressed?.()
+                break
         }
     }
 

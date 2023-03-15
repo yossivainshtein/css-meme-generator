@@ -53,8 +53,9 @@
 
 
 .cssValueContainerBox {
-    /* display: flex;
-    flex-direction: row; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     font-family: monospace;
 }
 .cssLabel {
@@ -72,3 +73,12 @@
 .cssLabel:focus{
     outline: none;
 } 
+
+.cssPropertyCheckbox {
+    visibility: hidden;
+    margin-right: 5px;
+}
+
+.cssEditor:hover .cssPropertyCheckbox {
+    visibility: visible;
+}

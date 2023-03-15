@@ -5,7 +5,7 @@ import { WithMemeTag } from './models/MemeTemplate';
 export default observer(
     class MemeInsertion extends React.Component<WithMemeTag> {
         private getStyle() {
-            return Object.fromEntries(this.props.tag.css.map(({prop, value}) => [prop, value]))
+            return Object.fromEntries(this.props.tag.css.filter(({is_active}) => is_active).map(({prop, value}) => [prop, value]))
         }
 
         render() {

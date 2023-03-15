@@ -1,19 +1,21 @@
 import { makeAutoObservable } from "mobx"
 
 export class CssProp {
+    
     public prop: string
     public value: string
+    public is_active: boolean
 
     constructor(prop: string, value: string) {
         makeAutoObservable(this)
         this.prop = prop
         this.value = value
+        this.is_active = true
     }
 }
 
 export class MemeTag {
     text: string
-    // css: Map<string, string>
     css: Array<CssProp>
 
     constructor(text: string, style: React.CSSProperties) {
