@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.4.1",
+    "html2canvas": "^1.4.1",
     "mobx": "^6.8.0",
     "mobx-react": "^7.6.0",
     "nanocolors": "^0.2.13",

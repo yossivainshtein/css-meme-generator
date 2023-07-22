@@ -28,8 +28,18 @@
 
 .memePreview {
     position: relative;
-    width: 50%;
     height: fit-content;
+}
+
+.memeLeftColumn {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.saveButton {
+    align-self: center;
 }
 
 .memeInsertion {

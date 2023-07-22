@@ -1,5 +1,5 @@
 import { makeAutoObservable } from "mobx"
-
+import boyfriendImage from '../images/Distracted-Boyfriend.jpeg'
 export class CssProp {
     
     public prop: string
@@ -41,7 +41,7 @@ export class MemeTemplate {
     }
 }
 
-export const boyfriendTemplate = new MemeTemplate('https://imgflip.com/s/meme/Distracted-Boyfriend.jpg', 
+export const boyfriendTemplate = new MemeTemplate(boyfriendImage, 
     [
         new MemeTag('usa', { left: '23%', top: '72%' }),
         new MemeTag('corona virus', { left: '47%', top: '50%' }),
