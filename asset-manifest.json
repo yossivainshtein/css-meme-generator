@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/css-meme-generator/static/css/main.56ec9048.chunk.css",
-    "main.js": "/css-meme-generator/static/js/main.d0120b35.chunk.js",
-    "main.js.map": "/css-meme-generator/static/js/main.d0120b35.chunk.js.map",
+    "main.css": "/css-meme-generator/static/css/main.90a69c3a.chunk.css",
+    "main.js": "/css-meme-generator/static/js/main.93faaa29.chunk.js",
+    "main.js.map": "/css-meme-generator/static/js/main.93faaa29.chunk.js.map",
     "runtime-main.js": "/css-meme-generator/static/js/runtime-main.e0dee3c0.js",
     "runtime-main.js.map": "/css-meme-generator/static/js/runtime-main.e0dee3c0.js.map",
     "static/css/2.9c6f16ff.chunk.css": "/css-meme-generator/static/css/2.9c6f16ff.chunk.css",
-    "static/js/2.dc1baecd.chunk.js": "/css-meme-generator/static/js/2.dc1baecd.chunk.js",
-    "static/js/2.dc1baecd.chunk.js.map": "/css-meme-generator/static/js/2.dc1baecd.chunk.js.map",
+    "static/js/2.29c253e1.chunk.js": "/css-meme-generator/static/js/2.29c253e1.chunk.js",
+    "static/js/2.29c253e1.chunk.js.map": "/css-meme-generator/static/js/2.29c253e1.chunk.js.map",
     "index.html": "/css-meme-generator/index.html",
-    "precache-manifest.cab63e88ff0b330ede7ef533275ab5d1.js": "/css-meme-generator/precache-manifest.cab63e88ff0b330ede7ef533275ab5d1.js",
+    "precache-manifest.7f85417697be10ba759832c9e67fd45c.js": "/css-meme-generator/precache-manifest.7f85417697be10ba759832c9e67fd45c.js",
     "service-worker.js": "/css-meme-generator/service-worker.js",
     "static/css/2.9c6f16ff.chunk.css.map": "/css-meme-generator/static/css/2.9c6f16ff.chunk.css.map",
-    "static/css/main.56ec9048.chunk.css.map": "/css-meme-generator/static/css/main.56ec9048.chunk.css.map",
-    "static/js/2.dc1baecd.chunk.js.LICENSE.txt": "/css-meme-generator/static/js/2.dc1baecd.chunk.js.LICENSE.txt"
+    "static/css/main.90a69c3a.chunk.css.map": "/css-meme-generator/static/css/main.90a69c3a.chunk.css.map",
+    "static/js/2.29c253e1.chunk.js.LICENSE.txt": "/css-meme-generator/static/js/2.29c253e1.chunk.js.LICENSE.txt",
+    "static/media/Distracted-Boyfriend.jpeg": "/css-meme-generator/static/media/Distracted-Boyfriend.4ee61cd7.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.e0dee3c0.js",
     "static/css/2.9c6f16ff.chunk.css",
-    "static/js/2.dc1baecd.chunk.js",
-    "static/css/main.56ec9048.chunk.css",
-    "static/js/main.d0120b35.chunk.js"
+    "static/js/2.29c253e1.chunk.js",
+    "static/css/main.90a69c3a.chunk.css",
+    "static/js/main.93faaa29.chunk.js"
   ]
 }
