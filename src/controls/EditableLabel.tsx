@@ -2,6 +2,7 @@ import React from 'react';
 
 interface EditableLabelProps {
     value: string
+    is_active: boolean
     onValueChange: (value: string) => void
     onTabPressed?: () => void
 }
@@ -64,7 +65,8 @@ export default class EditableLabel extends React.Component<EditableLabelProps> {
                   onInput= { () => this.handleChange() } 
                   value = { this.props.value }
                   style = {{
-                    width: `${this.props.value.length}ch`
+                    width: `${this.props.value.length}ch`,
+                    ...(!this.props.is_active && {textDecoration: 'line-through'})
                   }}
                   onKeyDown = { (e) => this.keyDownHandler(e) }
                   onChange = { (e) => this.props.onValueChange(e.target.value)}

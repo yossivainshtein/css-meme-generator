@@ -45,11 +45,13 @@ const CssPropEditor = observer(class CssPropEditorInner extends React.Component<
                         }
                     }}/>
                     <EditableLabel 
+                        is_active={this.props.cssProp.is_active}
                         value={this.props.cssProp.prop} 
                         onValueChange={(value: string) => { this.props.cssProp.prop = value }}/>
                     :
                     <EditableLabel 
                         value={this.props.cssProp.value} 
+                        is_active={this.props.cssProp.is_active}
                         onTabPressed={this.props.onTabPressedOnValue}
                         onValueChange={(value: string) => { this.props.cssProp.value = value }}/>
                 </div>)
